@@ -1,0 +1,15 @@
+Model Log
+
+model_1:
+training data: 122 hari, feature: cumulative confirmed case, normalization: normalized to province's population then min-max scaled
+adjacent matrix: unweighted
+architecture: 	gc_layer_sizes=[32, 32, 16],
+    		gc_activations=["relu", "relu", "relu"],
+    		lstm_layer_sizes=[200, 100, 50],
+    		lstm_activations=["tanh", "tanh", "tanh"]
+		Dropout(default)
+		Dense(34, "sigmoid")
+seq_len = 10
+pre_len = 10
+optimizer="adam", loss="mae", metrics=["accuracy"], epochs=1000, batch_size=20, shuffle=True
+
