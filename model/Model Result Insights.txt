@@ -1,0 +1,13 @@
+Model Insight
+------------------------------------------------------------------
+# catatan model_1
+# 0, 22, 25 paling parah
+# 18 (emang bodoh) mayan jelek
+# 15 unik, dia bisa ngikutin lonjakan dan landaian nya
+
+------------------------------------------------------------------
+# catatan model_2
+# improvement: 0 udah bagus, 15 even better, 18 udah bagus, 22 udah bagus!, 25 udah bagus!
+# model sekarang mampu smoothing lonjakan tajam dengan akurat (misal 0, 15, 18, 26, 29)
+
+------------------------------------------------------------------
