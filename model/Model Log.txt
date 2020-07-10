@@ -1,7 +1,8 @@
 Model Log
-
+-----------------------------------------------------------------------------
 model_1:
 training data: 122 hari, feature: cumulative confirmed case, normalization: normalized to province's population then min-max scaled
+no validation
 adjacent matrix: unweighted
 architecture: 	gc_layer_sizes=[32, 32, 16],
     		gc_activations=["relu", "relu", "relu"],
@@ -12,4 +13,21 @@ architecture: 	gc_layer_sizes=[32, 32, 16],
 seq_len = 10
 pre_len = 10
 optimizer="adam", loss="mae", metrics=["accuracy"], epochs=1000, batch_size=20, shuffle=True
+
+-------------------------------------------------------------------------------
+model_2:
+training data: 122 hari, feature: cumulative confirmed case, normalization: normalized to province's population (WITHOUT min-max scaled)
+no validation
+adjacent matrix: unweighted
+architecture: 	gc_layer_sizes=[32, 32, 16],
+    		gc_activations=["relu", "relu", "relu"],
+    		lstm_layer_sizes=[200, 200, 200],
+    		lstm_activations=["sigmoid", "sigmoid", "sigmoid"]
+		Dropout(default)
+		Dense(34, "relu")
+seq_len = 10
+pre_len = 5
+optimizer="adam", loss="mae", metrics=["accuracy"], epochs=1000, batch_size=20, shuffle=True
+
+--------------------------------------------------------------------------------
 
